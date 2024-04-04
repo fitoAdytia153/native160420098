@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/studentListFragment">
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.ubaya.advnativeweek7160420098.view.StudentListFragment"
+        android:label="fragment_student_list"
+        tools:layout="@layout/fragment_student_list" >
+        <action
+            android:id="@+id/actionStudentDetail"
+            app:destination="@id/studentDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentDetailFragment"
+        android:name="com.ubaya.advnativeweek7160420098.view.StudentDetailFragment"
+        android:label="fragment_student_detail"
+        tools:layout="@layout/fragment_student_detail" >
+        <argument
+            android:name="studentId"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.ubaya.advnativeweek7160420098.view.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

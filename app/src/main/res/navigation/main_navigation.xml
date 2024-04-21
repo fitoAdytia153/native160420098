@@ -1,0 +1,65 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ubaya.uts_anmp_160420098.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/actionToRegister"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/actionAfterLogin"
+            app:destination="@id/heroListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.ubaya.uts_anmp_160420098.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+
+        <!-- Navigasi kembali ke Login setelah Registrasi -->
+        <action
+            android:id="@+id/actionAfterRegister"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/heroDetailFragment"
+        android:name="com.ubaya.uts_anmp_160420098.view.HeroDetailFragment"
+        android:label="fragment_hero_detail"
+        tools:layout="@layout/fragment_hero_detail">
+        <argument
+            android:name="heroId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ubaya.uts_anmp_160420098.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/actionAfterLogout"
+            app:destination="@id/loginFragment" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroListFragment"
+        android:name="com.ubaya.uts_anmp_160420098.view.HeroListFragment"
+        android:label="fragment_hero_list"
+        tools:layout="@layout/fragment_hero_list">
+        <action
+            android:id="@+id/actionHeroDetail"
+            app:destination="@id/heroDetailFragment" />
+    </fragment>
+
+</navigation>
